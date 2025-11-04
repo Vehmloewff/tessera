@@ -1,7 +1,7 @@
 use log::error;
 use std::marker::PhantomData;
 
-use super::{InternalBuffer, Template, tag::HtmlTag};
+use super::{InternalBuffer, Template};
 
 pub trait ElementAttributor {
     fn attr(self, name: &str, value: &str) -> Self;
@@ -14,10 +14,7 @@ pub struct Element<'a, Tag> {
     _marker: PhantomData<Tag>,
 }
 
-impl<Tag> Element<'_, Tag>
-where
-    Tag: HtmlTag,
-{
+impl<Tag> Element<'_, Tag> {
     pub fn new<'a>(html: &'a mut InternalBuffer) -> Element<'a, Tag> {
         Element {
             buffer: html,

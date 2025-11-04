@@ -1,7 +1,4 @@
-use crate::{
-    Element, InternalBuffer,
-    tag::*,
-};
+use crate::{Element, InternalBuffer, tag::*};
 
 pub struct Template<'a> {
     buffer: &'a mut InternalBuffer,
@@ -17,6 +14,8 @@ macro_rules! template_method {
     };
 }
 
+pub struct CustomTag;
+
 impl<'a> Template<'a> {
     /// Create a new Template from an Html buffer
     pub fn new(html: &'a mut InternalBuffer) -> Self {
@@ -28,6 +27,11 @@ impl<'a> Template<'a> {
         Tag: HtmlTag,
     {
         self.buffer.open(Tag::name(), Tag::is_void());
+        Element::new(self.buffer)
+    }
+
+    pub fn custom_element(&mut self, name: &str) -> Element<'_, CustomTag> {
+        self.buffer.open(name, false);
         Element::new(self.buffer)
     }
 
@@ -165,5 +169,9 @@ impl<'a> Template<'a> {
     template_method!(canvas, HtmlCanvasTag, "Create a canvas element");
 
     // Other
-    template_method!(selectedcontent, HtmlSelectedcontentTag, "Create a selectedcontent element");
+    template_method!(
+        selectedcontent,
+        HtmlSelectedcontentTag,
+        "Create a selectedcontent element"
+    );
 }
