@@ -1512,8 +1512,8 @@ where
         self.attr("xmlns", value)
     }
 
-    fn viewbox(self, value: &str) -> Self {
-        self.attr("viewBox", value)
+    fn view_box(self, value: &str) -> Self {
+        self.attr("view_box", value)
     }
 
     fn preserve_aspect_ratio(self, value: &str) -> Self {
@@ -2117,7 +2117,7 @@ where
     }
 
     fn view_box(self, value: &str) -> Self {
-        self.attr("viewBox", value)
+        self.attr("view_box", value)
     }
 
     fn pattern_units(self, value: &str) -> Self {
@@ -2167,8 +2167,8 @@ where
         self.attr("refY", value)
     }
 
-    fn viewbox(self, value: &str) -> Self {
-        self.attr("viewBox", value)
+    fn view_box(self, value: &str) -> Self {
+        self.attr("view_box", value)
     }
 
     fn orient(self, value: &str) -> Self {

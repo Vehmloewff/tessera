@@ -66,7 +66,7 @@ mod test {
         let mut t = buffer.template();
 
         t.svg()
-            .viewbox("0 0 100 100")
+            .view_box("0 0 100 100")
             .xmlns("http://www.w3.org/2000/svg")
             .width("100")
             .height("100")
