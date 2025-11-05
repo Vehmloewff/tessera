@@ -128,6 +128,142 @@ impl<'a> Template<'a> {
     template_method!(math, HtmlMathTag, "Create a math element");
     template_method!(svg, HtmlSvgTag, "Create an svg element");
 
+    // SVG elements
+    template_method!(circle, SvgCircleTag, "Create an SVG circle element");
+    template_method!(ellipse, SvgEllipseTag, "Create an SVG ellipse element");
+    template_method!(line, SvgLineTag, "Create an SVG line element");
+    template_method!(path, SvgPathTag, "Create an SVG path element");
+    template_method!(polygon, SvgPolygonTag, "Create an SVG polygon element");
+    template_method!(polyline, SvgPolylineTag, "Create an SVG polyline element");
+    template_method!(rect, SvgRectTag, "Create an SVG rect element");
+    template_method!(g, SvgGTag, "Create an SVG g (group) element");
+    template_method!(defs, SvgDefsTag, "Create an SVG defs element");
+    template_method!(symbol, SvgSymbolTag, "Create an SVG symbol element");
+    template_method!(use_attr, SvgUseTag, "Create an SVG use element");
+    template_method!(text, SvgTextTag, "Create an SVG text element");
+    template_method!(tspan, SvgTspanTag, "Create an SVG tspan element");
+    template_method!(text_path, SvgTextPathTag, "Create an SVG textPath element");
+    template_method!(marker, SvgMarkerTag, "Create an SVG marker element");
+    template_method!(clip_path, SvgClipPathTag, "Create an SVG clipPath element");
+    template_method!(mask, SvgMaskTag, "Create an SVG mask element");
+    template_method!(pattern, SvgPatternTag, "Create an SVG pattern element");
+    template_method!(
+        linear_gradient,
+        SvgLinearGradientTag,
+        "Create an SVG linearGradient element"
+    );
+    template_method!(
+        radial_gradient,
+        SvgRadialGradientTag,
+        "Create an SVG radialGradient element"
+    );
+    template_method!(stop, SvgStopTag, "Create an SVG stop element");
+    template_method!(image, SvgImageTag, "Create an SVG image element");
+    template_method!(
+        foreign_object,
+        SvgForeignObjectTag,
+        "Create an SVG foreignObject element"
+    );
+    template_method!(animate, SvgAnimateTag, "Create an SVG animate element");
+    template_method!(
+        animate_transform,
+        SvgAnimateTransformTag,
+        "Create an SVG animateTransform element"
+    );
+    template_method!(set, SvgSetTag, "Create an SVG set element");
+    template_method!(filter, SvgFilterTag, "Create an SVG filter element");
+    template_method!(fe_blend, SvgFeBlendTag, "Create an SVG feBlend element");
+    template_method!(
+        fe_color_matrix,
+        SvgFeColorMatrixTag,
+        "Create an SVG feColorMatrix element"
+    );
+    template_method!(
+        fe_component_transfer,
+        SvgFeComponentTransferTag,
+        "Create an SVG feComponentTransfer element"
+    );
+    template_method!(
+        fe_composite,
+        SvgFeCompositeTag,
+        "Create an SVG feComposite element"
+    );
+    template_method!(
+        fe_convolve_matrix,
+        SvgFeConvolveMatrixTag,
+        "Create an SVG feConvolveMatrix element"
+    );
+    template_method!(
+        fe_diffuse_lighting,
+        SvgFeDiffuseLightingTag,
+        "Create an SVG feDiffuseLighting element"
+    );
+    template_method!(
+        fe_displacement_map,
+        SvgFeDisplacementMapTag,
+        "Create an SVG feDisplacementMap element"
+    );
+    template_method!(
+        fe_distant_light,
+        SvgFeDistantLightTag,
+        "Create an SVG feDistantLight element"
+    );
+    template_method!(
+        fe_drop_shadow,
+        SvgFeDropShadowTag,
+        "Create an SVG feDropShadow element"
+    );
+    template_method!(fe_flood, SvgFeFloodTag, "Create an SVG feFlood element");
+    template_method!(fe_func_a, SvgFeFuncATag, "Create an SVG feFuncA element");
+    template_method!(fe_func_b, SvgFeFuncBTag, "Create an SVG feFuncB element");
+    template_method!(fe_func_g, SvgFeFuncGTag, "Create an SVG feFuncG element");
+    template_method!(fe_func_r, SvgFeFuncRTag, "Create an SVG feFuncR element");
+    template_method!(
+        fe_gaussian_blur,
+        SvgFeGaussianBlurTag,
+        "Create an SVG feGaussianBlur element"
+    );
+    template_method!(fe_image, SvgFeImageTag, "Create an SVG feImage element");
+    template_method!(fe_merge, SvgFeMergeTag, "Create an SVG feMerge element");
+    template_method!(
+        fe_merge_node,
+        SvgFeMergeNodeTag,
+        "Create an SVG feMergeNode element"
+    );
+    template_method!(
+        fe_morphology,
+        SvgFeMorphologyTag,
+        "Create an SVG feMorphology element"
+    );
+    template_method!(fe_offset, SvgFeOffsetTag, "Create an SVG feOffset element");
+    template_method!(
+        fe_point_light,
+        SvgFePointLightTag,
+        "Create an SVG fePointLight element"
+    );
+    template_method!(
+        fe_specular_lighting,
+        SvgFeSpecularLightingTag,
+        "Create an SVG feSpecularLighting element"
+    );
+    template_method!(
+        fe_spot_light,
+        SvgFeSpotLightTag,
+        "Create an SVG feSpotLight element"
+    );
+    template_method!(fe_tile, SvgFeTileTag, "Create an SVG feTile element");
+    template_method!(
+        fe_turbulence,
+        SvgFeTurbulenceTag,
+        "Create an SVG feTurbulence element"
+    );
+    template_method!(svg_a, SvgATag, "Create an SVG a (anchor) element");
+    template_method!(svg_script, SvgScriptTag, "Create an SVG script element");
+    template_method!(svg_style, SvgStyleTag, "Create an SVG style element");
+    template_method!(svg_title, SvgTitleTag, "Create an SVG title element");
+    template_method!(desc, SvgDescTag, "Create an SVG desc element");
+    template_method!(metadata, SvgMetadataTag, "Create an SVG metadata element");
+
     // Tabular data
     template_method!(table, HtmlTableTag, "Create a table element");
     template_method!(caption, HtmlCaptionTag, "Create a caption element");

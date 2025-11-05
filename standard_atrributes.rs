@@ -1479,3 +1479,784 @@ where
 }
 
 impl CanvasElementAttributes for Element<'_, HtmlCanvasTag> {}
+
+// ============================================================================
+// SVG Element Attributes (for <svg> root element)
+// ============================================================================
+
+pub trait SvgRootElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn xmlns(self, value: &str) -> Self {
+        self.attr("xmlns", value)
+    }
+
+    fn viewbox(self, value: &str) -> Self {
+        self.attr("viewBox", value)
+    }
+
+    fn preserve_aspect_ratio(self, value: &str) -> Self {
+        self.attr("preserveAspectRatio", value)
+    }
+
+    fn width(self, value: &str) -> Self {
+        self.attr("width", value)
+    }
+
+    fn height(self, value: &str) -> Self {
+        self.attr("height", value)
+    }
+
+    fn x(self, value: &str) -> Self {
+        self.attr("x", value)
+    }
+
+    fn y(self, value: &str) -> Self {
+        self.attr("y", value)
+    }
+}
+
+impl SvgRootElementAttributes for Element<'_, HtmlSvgTag> {}
+
+// ============================================================================
+// SVG Presentation Attributes (common to most SVG elements)
+// ============================================================================
+
+pub trait SvgPresentationAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn fill(self, value: &str) -> Self {
+        self.attr("fill", value)
+    }
+
+    fn fill_opacity(self, value: &str) -> Self {
+        self.attr("fill-opacity", value)
+    }
+
+    fn fill_rule(self, value: &str) -> Self {
+        self.attr("fill-rule", value)
+    }
+
+    fn stroke(self, value: &str) -> Self {
+        self.attr("stroke", value)
+    }
+
+    fn stroke_width(self, value: &str) -> Self {
+        self.attr("stroke-width", value)
+    }
+
+    fn stroke_opacity(self, value: &str) -> Self {
+        self.attr("stroke-opacity", value)
+    }
+
+    fn stroke_linecap(self, value: &str) -> Self {
+        self.attr("stroke-linecap", value)
+    }
+
+    fn stroke_linejoin(self, value: &str) -> Self {
+        self.attr("stroke-linejoin", value)
+    }
+
+    fn stroke_dasharray(self, value: &str) -> Self {
+        self.attr("stroke-dasharray", value)
+    }
+
+    fn stroke_dashoffset(self, value: &str) -> Self {
+        self.attr("stroke-dashoffset", value)
+    }
+
+    fn stroke_miterlimit(self, value: &str) -> Self {
+        self.attr("stroke-miterlimit", value)
+    }
+
+    fn opacity(self, value: &str) -> Self {
+        self.attr("opacity", value)
+    }
+
+    fn transform(self, value: &str) -> Self {
+        self.attr("transform", value)
+    }
+
+    fn clip_path(self, value: &str) -> Self {
+        self.attr("clip-path", value)
+    }
+
+    fn clip_rule(self, value: &str) -> Self {
+        self.attr("clip-rule", value)
+    }
+
+    fn mask(self, value: &str) -> Self {
+        self.attr("mask", value)
+    }
+
+    fn filter(self, value: &str) -> Self {
+        self.attr("filter", value)
+    }
+
+    fn display(self, value: &str) -> Self {
+        self.attr("display", value)
+    }
+
+    fn visibility(self, value: &str) -> Self {
+        self.attr("visibility", value)
+    }
+
+    fn color(self, value: &str) -> Self {
+        self.attr("color", value)
+    }
+
+    fn paint_order(self, value: &str) -> Self {
+        self.attr("paint-order", value)
+    }
+
+    fn vector_effect(self, value: &str) -> Self {
+        self.attr("vector-effect", value)
+    }
+}
+
+// Apply presentation attributes to common SVG elements
+impl SvgPresentationAttributes for Element<'_, SvgCircleTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgEllipseTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgLineTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgPathTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgPolygonTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgPolylineTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgRectTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgGTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgTextTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgTspanTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgTextPathTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgImageTag> {}
+impl SvgPresentationAttributes for Element<'_, SvgUseTag> {}
+
+// ============================================================================
+// SVG Circle Element Attributes
+// ============================================================================
+
+pub trait SvgCircleElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn cx(self, value: &str) -> Self {
+        self.attr("cx", value)
+    }
+
+    fn cy(self, value: &str) -> Self {
+        self.attr("cy", value)
+    }
+
+    fn r(self, value: &str) -> Self {
+        self.attr("r", value)
+    }
+
+    fn path_length(self, value: &str) -> Self {
+        self.attr("pathLength", value)
+    }
+}
+
+impl SvgCircleElementAttributes for Element<'_, SvgCircleTag> {}
+
+// ============================================================================
+// SVG Ellipse Element Attributes
+// ============================================================================
+
+pub trait SvgEllipseElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn cx(self, value: &str) -> Self {
+        self.attr("cx", value)
+    }
+
+    fn cy(self, value: &str) -> Self {
+        self.attr("cy", value)
+    }
+
+    fn rx(self, value: &str) -> Self {
+        self.attr("rx", value)
+    }
+
+    fn ry(self, value: &str) -> Self {
+        self.attr("ry", value)
+    }
+
+    fn path_length(self, value: &str) -> Self {
+        self.attr("pathLength", value)
+    }
+}
+
+impl SvgEllipseElementAttributes for Element<'_, SvgEllipseTag> {}
+
+// ============================================================================
+// SVG Line Element Attributes
+// ============================================================================
+
+pub trait SvgLineElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn x1(self, value: &str) -> Self {
+        self.attr("x1", value)
+    }
+
+    fn y1(self, value: &str) -> Self {
+        self.attr("y1", value)
+    }
+
+    fn x2(self, value: &str) -> Self {
+        self.attr("x2", value)
+    }
+
+    fn y2(self, value: &str) -> Self {
+        self.attr("y2", value)
+    }
+
+    fn path_length(self, value: &str) -> Self {
+        self.attr("pathLength", value)
+    }
+}
+
+impl SvgLineElementAttributes for Element<'_, SvgLineTag> {}
+
+// ============================================================================
+// SVG Path Element Attributes
+// ============================================================================
+
+pub trait SvgPathElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn d(self, value: &str) -> Self {
+        self.attr("d", value)
+    }
+
+    fn path_length(self, value: &str) -> Self {
+        self.attr("pathLength", value)
+    }
+}
+
+impl SvgPathElementAttributes for Element<'_, SvgPathTag> {}
+
+// ============================================================================
+// SVG Polygon Element Attributes
+// ============================================================================
+
+pub trait SvgPolygonElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn points(self, value: &str) -> Self {
+        self.attr("points", value)
+    }
+
+    fn path_length(self, value: &str) -> Self {
+        self.attr("pathLength", value)
+    }
+}
+
+impl SvgPolygonElementAttributes for Element<'_, SvgPolygonTag> {}
+
+// ============================================================================
+// SVG Polyline Element Attributes
+// ============================================================================
+
+pub trait SvgPolylineElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn points(self, value: &str) -> Self {
+        self.attr("points", value)
+    }
+
+    fn path_length(self, value: &str) -> Self {
+        self.attr("pathLength", value)
+    }
+}
+
+impl SvgPolylineElementAttributes for Element<'_, SvgPolylineTag> {}
+
+// ============================================================================
+// SVG Rect Element Attributes
+// ============================================================================
+
+pub trait SvgRectElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn x(self, value: &str) -> Self {
+        self.attr("x", value)
+    }
+
+    fn y(self, value: &str) -> Self {
+        self.attr("y", value)
+    }
+
+    fn width(self, value: &str) -> Self {
+        self.attr("width", value)
+    }
+
+    fn height(self, value: &str) -> Self {
+        self.attr("height", value)
+    }
+
+    fn rx(self, value: &str) -> Self {
+        self.attr("rx", value)
+    }
+
+    fn ry(self, value: &str) -> Self {
+        self.attr("ry", value)
+    }
+
+    fn path_length(self, value: &str) -> Self {
+        self.attr("pathLength", value)
+    }
+}
+
+impl SvgRectElementAttributes for Element<'_, SvgRectTag> {}
+
+// ============================================================================
+// SVG Text Element Attributes
+// ============================================================================
+
+pub trait SvgTextElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn x(self, value: &str) -> Self {
+        self.attr("x", value)
+    }
+
+    fn y(self, value: &str) -> Self {
+        self.attr("y", value)
+    }
+
+    fn dx(self, value: &str) -> Self {
+        self.attr("dx", value)
+    }
+
+    fn dy(self, value: &str) -> Self {
+        self.attr("dy", value)
+    }
+
+    fn rotate(self, value: &str) -> Self {
+        self.attr("rotate", value)
+    }
+
+    fn text_length(self, value: &str) -> Self {
+        self.attr("textLength", value)
+    }
+
+    fn length_adjust(self, value: &str) -> Self {
+        self.attr("lengthAdjust", value)
+    }
+
+    fn text_anchor(self, value: &str) -> Self {
+        self.attr("text-anchor", value)
+    }
+
+    fn dominant_baseline(self, value: &str) -> Self {
+        self.attr("dominant-baseline", value)
+    }
+
+    fn font_family(self, value: &str) -> Self {
+        self.attr("font-family", value)
+    }
+
+    fn font_size(self, value: &str) -> Self {
+        self.attr("font-size", value)
+    }
+
+    fn font_weight(self, value: &str) -> Self {
+        self.attr("font-weight", value)
+    }
+
+    fn font_style(self, value: &str) -> Self {
+        self.attr("font-style", value)
+    }
+}
+
+impl SvgTextElementAttributes for Element<'_, SvgTextTag> {}
+impl SvgTextElementAttributes for Element<'_, SvgTspanTag> {}
+
+// ============================================================================
+// SVG Use Element Attributes
+// ============================================================================
+
+pub trait SvgUseElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn href(self, value: &str) -> Self {
+        self.attr("href", value)
+    }
+
+    fn x(self, value: &str) -> Self {
+        self.attr("x", value)
+    }
+
+    fn y(self, value: &str) -> Self {
+        self.attr("y", value)
+    }
+
+    fn width(self, value: &str) -> Self {
+        self.attr("width", value)
+    }
+
+    fn height(self, value: &str) -> Self {
+        self.attr("height", value)
+    }
+}
+
+impl SvgUseElementAttributes for Element<'_, SvgUseTag> {}
+
+// ============================================================================
+// SVG Image Element Attributes
+// ============================================================================
+
+pub trait SvgImageElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn href(self, value: &str) -> Self {
+        self.attr("href", value)
+    }
+
+    fn x(self, value: &str) -> Self {
+        self.attr("x", value)
+    }
+
+    fn y(self, value: &str) -> Self {
+        self.attr("y", value)
+    }
+
+    fn width(self, value: &str) -> Self {
+        self.attr("width", value)
+    }
+
+    fn height(self, value: &str) -> Self {
+        self.attr("height", value)
+    }
+
+    fn preserve_aspect_ratio(self, value: &str) -> Self {
+        self.attr("preserveAspectRatio", value)
+    }
+
+    fn crossorigin(self, value: &str) -> Self {
+        self.attr("crossorigin", value)
+    }
+
+    fn decoding(self, value: &str) -> Self {
+        self.attr("decoding", value)
+    }
+}
+
+impl SvgImageElementAttributes for Element<'_, SvgImageTag> {}
+
+// ============================================================================
+// SVG Gradient Stop Element Attributes
+// ============================================================================
+
+pub trait SvgStopElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn offset(self, value: &str) -> Self {
+        self.attr("offset", value)
+    }
+
+    fn stop_color(self, value: &str) -> Self {
+        self.attr("stop-color", value)
+    }
+
+    fn stop_opacity(self, value: &str) -> Self {
+        self.attr("stop-opacity", value)
+    }
+}
+
+impl SvgStopElementAttributes for Element<'_, SvgStopTag> {}
+
+// ============================================================================
+// SVG Linear Gradient Element Attributes
+// ============================================================================
+
+pub trait SvgLinearGradientElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn x1(self, value: &str) -> Self {
+        self.attr("x1", value)
+    }
+
+    fn y1(self, value: &str) -> Self {
+        self.attr("y1", value)
+    }
+
+    fn x2(self, value: &str) -> Self {
+        self.attr("x2", value)
+    }
+
+    fn y2(self, value: &str) -> Self {
+        self.attr("y2", value)
+    }
+
+    fn gradient_units(self, value: &str) -> Self {
+        self.attr("gradientUnits", value)
+    }
+
+    fn gradient_transform(self, value: &str) -> Self {
+        self.attr("gradientTransform", value)
+    }
+
+    fn spread_method(self, value: &str) -> Self {
+        self.attr("spreadMethod", value)
+    }
+
+    fn href(self, value: &str) -> Self {
+        self.attr("href", value)
+    }
+}
+
+impl SvgLinearGradientElementAttributes for Element<'_, SvgLinearGradientTag> {}
+
+// ============================================================================
+// SVG Radial Gradient Element Attributes
+// ============================================================================
+
+pub trait SvgRadialGradientElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn cx(self, value: &str) -> Self {
+        self.attr("cx", value)
+    }
+
+    fn cy(self, value: &str) -> Self {
+        self.attr("cy", value)
+    }
+
+    fn r(self, value: &str) -> Self {
+        self.attr("r", value)
+    }
+
+    fn fx(self, value: &str) -> Self {
+        self.attr("fx", value)
+    }
+
+    fn fy(self, value: &str) -> Self {
+        self.attr("fy", value)
+    }
+
+    fn fr(self, value: &str) -> Self {
+        self.attr("fr", value)
+    }
+
+    fn gradient_units(self, value: &str) -> Self {
+        self.attr("gradientUnits", value)
+    }
+
+    fn gradient_transform(self, value: &str) -> Self {
+        self.attr("gradientTransform", value)
+    }
+
+    fn spread_method(self, value: &str) -> Self {
+        self.attr("spreadMethod", value)
+    }
+
+    fn href(self, value: &str) -> Self {
+        self.attr("href", value)
+    }
+}
+
+impl SvgRadialGradientElementAttributes for Element<'_, SvgRadialGradientTag> {}
+
+// ============================================================================
+// SVG Pattern Element Attributes
+// ============================================================================
+
+pub trait SvgPatternElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn x(self, value: &str) -> Self {
+        self.attr("x", value)
+    }
+
+    fn y(self, value: &str) -> Self {
+        self.attr("y", value)
+    }
+
+    fn width(self, value: &str) -> Self {
+        self.attr("width", value)
+    }
+
+    fn height(self, value: &str) -> Self {
+        self.attr("height", value)
+    }
+
+    fn viewbox(self, value: &str) -> Self {
+        self.attr("viewBox", value)
+    }
+
+    fn pattern_units(self, value: &str) -> Self {
+        self.attr("patternUnits", value)
+    }
+
+    fn pattern_content_units(self, value: &str) -> Self {
+        self.attr("patternContentUnits", value)
+    }
+
+    fn pattern_transform(self, value: &str) -> Self {
+        self.attr("patternTransform", value)
+    }
+
+    fn preserve_aspect_ratio(self, value: &str) -> Self {
+        self.attr("preserveAspectRatio", value)
+    }
+
+    fn href(self, value: &str) -> Self {
+        self.attr("href", value)
+    }
+}
+
+impl SvgPatternElementAttributes for Element<'_, SvgPatternTag> {}
+
+// ============================================================================
+// SVG Marker Element Attributes
+// ============================================================================
+
+pub trait SvgMarkerElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn marker_width(self, value: &str) -> Self {
+        self.attr("markerWidth", value)
+    }
+
+    fn marker_height(self, value: &str) -> Self {
+        self.attr("markerHeight", value)
+    }
+
+    fn ref_x(self, value: &str) -> Self {
+        self.attr("refX", value)
+    }
+
+    fn ref_y(self, value: &str) -> Self {
+        self.attr("refY", value)
+    }
+
+    fn viewbox(self, value: &str) -> Self {
+        self.attr("viewBox", value)
+    }
+
+    fn orient(self, value: &str) -> Self {
+        self.attr("orient", value)
+    }
+
+    fn marker_units(self, value: &str) -> Self {
+        self.attr("markerUnits", value)
+    }
+
+    fn preserve_aspect_ratio(self, value: &str) -> Self {
+        self.attr("preserveAspectRatio", value)
+    }
+}
+
+impl SvgMarkerElementAttributes for Element<'_, SvgMarkerTag> {}
+
+// ============================================================================
+// SVG Filter Element Attributes
+// ============================================================================
+
+pub trait SvgFilterElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn x(self, value: &str) -> Self {
+        self.attr("x", value)
+    }
+
+    fn y(self, value: &str) -> Self {
+        self.attr("y", value)
+    }
+
+    fn width(self, value: &str) -> Self {
+        self.attr("width", value)
+    }
+
+    fn height(self, value: &str) -> Self {
+        self.attr("height", value)
+    }
+
+    fn filter_units(self, value: &str) -> Self {
+        self.attr("filterUnits", value)
+    }
+
+    fn primitive_units(self, value: &str) -> Self {
+        self.attr("primitiveUnits", value)
+    }
+}
+
+impl SvgFilterElementAttributes for Element<'_, SvgFilterTag> {}
+
+// ============================================================================
+// SVG Animation Element Attributes
+// ============================================================================
+
+pub trait SvgAnimationElementAttributes
+where
+    Self: ElementAttributor + Sized,
+{
+    fn attribute_name(self, value: &str) -> Self {
+        self.attr("attributeName", value)
+    }
+
+    fn from(self, value: &str) -> Self {
+        self.attr("from", value)
+    }
+
+    fn to(self, value: &str) -> Self {
+        self.attr("to", value)
+    }
+
+    fn dur(self, value: &str) -> Self {
+        self.attr("dur", value)
+    }
+
+    fn begin(self, value: &str) -> Self {
+        self.attr("begin", value)
+    }
+
+    fn end(self, value: &str) -> Self {
+        self.attr("end", value)
+    }
+
+    fn repeat_count(self, value: &str) -> Self {
+        self.attr("repeatCount", value)
+    }
+
+    fn repeat_dur(self, value: &str) -> Self {
+        self.attr("repeatDur", value)
+    }
+
+    fn fill_anim(self, value: &str) -> Self {
+        self.attr("fill", value)
+    }
+
+    fn values(self, value: &str) -> Self {
+        self.attr("values", value)
+    }
+
+    fn key_times(self, value: &str) -> Self {
+        self.attr("keyTimes", value)
+    }
+
+    fn calc_mode(self, value: &str) -> Self {
+        self.attr("calcMode", value)
+    }
+}
+
+impl SvgAnimationElementAttributes for Element<'_, SvgAnimateTag> {}
+impl SvgAnimationElementAttributes for Element<'_, SvgAnimateTransformTag> {}
+impl SvgAnimationElementAttributes for Element<'_, SvgSetTag> {}
