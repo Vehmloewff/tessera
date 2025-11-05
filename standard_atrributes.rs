@@ -310,6 +310,18 @@ where
     fn width(self, value: &str) -> Self {
         self.attr("width", value)
     }
+
+    fn capture(self, value: &str) -> Self {
+        self.attr("capture", value)
+    }
+
+    fn popovertarget(self, value: &str) -> Self {
+        self.attr("popovertarget", value)
+    }
+
+    fn popovertargetaction(self, value: &str) -> Self {
+        self.attr("popovertargetaction", value)
+    }
 }
 
 impl InputElementAttributes for Element<'_, HtmlInputTag> {}
@@ -368,6 +380,14 @@ where
 
     fn value(self, value: &str) -> Self {
         self.attr("value", value)
+    }
+
+    fn popovertarget(self, value: &str) -> Self {
+        self.attr("popovertarget", value)
+    }
+
+    fn popovertargetaction(self, value: &str) -> Self {
+        self.attr("popovertargetaction", value)
     }
 }
 
