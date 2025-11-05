@@ -2096,7 +2096,7 @@ where
         self.attr("height", value)
     }
 
-    fn viewbox(self, value: &str) -> Self {
+    fn view_box(self, value: &str) -> Self {
         self.attr("viewBox", value)
     }
 
