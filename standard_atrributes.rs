@@ -1617,6 +1617,7 @@ where
 }
 
 // Apply presentation attributes to common SVG elements
+impl SvgPresentationAttributes for Element<'_, HtmlSvgTag> {}
 impl SvgPresentationAttributes for Element<'_, SvgCircleTag> {}
 impl SvgPresentationAttributes for Element<'_, SvgEllipseTag> {}
 impl SvgPresentationAttributes for Element<'_, SvgLineTag> {}

@@ -126,9 +126,9 @@ impl<'a> Template<'a> {
     template_method!(map, HtmlMapTag, "Create a map element");
     template_method!(area, HtmlAreaTag, "Create an area element");
     template_method!(math, HtmlMathTag, "Create a math element");
-    template_method!(svg, HtmlSvgTag, "Create an svg element");
 
     // SVG elements
+    template_method!(svg, HtmlSvgTag, "Create an svg element");
     template_method!(circle, SvgCircleTag, "Create an SVG circle element");
     template_method!(ellipse, SvgEllipseTag, "Create an SVG ellipse element");
     template_method!(line, SvgLineTag, "Create an SVG line element");
